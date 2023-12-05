@@ -74,10 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
-        <ThemeProviders>
-          {/* <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} /> */}
-          <Script src="https://www.googletagmanager.com/gtag/js?id=G-FSG3D3C9K2" />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-FSG3D3C9K2" />
           <Script id="google-analytics">
             {`
           window.dataLayer = window.dataLayer || [];
@@ -87,6 +84,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           gtag('config', 'G-FSG3D3C9K2');
         `}
           </Script>
+      <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
+        <ThemeProviders>
+          {/* <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} /> */}
+
           <SectionContainer>
             <div className="flex h-screen flex-col justify-between font-sans">
               <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
